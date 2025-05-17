@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../Components/Header'
+import Footer from '../Components/Footer'
 import style from "../Pages/Home.module.css"
 import HeroeImg from "../assets/EwalletHeroeImg.png"
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         </div>
         <img src={HeroeImg} alt="" />
       </div>
+      <Footer />
     </div>
   )
 }
