@@ -1,0 +1,30 @@
+.Sidebar {
+    width: 23%;
+    height: 100vh;
+    position: fixed;
+    box-shadow: 3px 0 5px #ccc;
+}
+.Sidebar .navbrand {
+    background-color: #eaeaea;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.Sidebar .navbrand h3, .Sidebar .footer i {
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Cal Sans", sans-serif;
+}
+
+.Sidebar .footer {
+    background-color: #eaeaea;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

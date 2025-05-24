@@ -48,10 +48,15 @@
 
 .Register .container .formDiv form button {
     width: 100%;
-    margin-top: 10px;
-    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 5px 15px;
     border: none;
     background: linear-gradient(to bottom, #ff6a00, #ee0979);
     font-size: 1.2rem;
     color: #fff;
+}
+
+.Register .container .formDiv form .error {
+    border-bottom-color: #f00;
 }

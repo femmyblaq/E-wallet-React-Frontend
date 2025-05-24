@@ -1,0 +1,7 @@
+.Main {
+    width: 77%;
+    border: 1px solid blue;
+    position: absolute;
+    right: 0;
+    height: 100vh;
+}
