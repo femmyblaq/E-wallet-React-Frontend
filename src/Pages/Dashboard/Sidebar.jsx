@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import style from '../Dashboard/Sidebar.module.css'
 
 export default function Sidebar() {
@@ -10,10 +10,12 @@ export default function Sidebar() {
                   </div>
         <div className={style.navlinks}>
             <ul>
-                <li><Link to="">Dashboard</Link></li>
-                <li><Link to="">Fund Transfer</Link></li>
+                <li className={style.active}><Link to="/dash"><i class="ri-dashboard-2-line"></i> Dashboard</Link></li>
+                <li><Link to="/dashboard/fundTransfer"><i class="ri-send-plane-fill"></i> Fund Transfer</Link></li>
+                <li><Link to="/dashboard/loans"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000"><path d="M349-144q-85 0-145-60t-60-145q0-35 11.5-68t32.5-60l130-165-72-174h468l-73 174 131 165q21 27 32.5 60t11.5 68q0 85-60 145t-145 60H349Zm131-180q-35 0-59.5-24.5T396-408q0-35 24.5-59.5T480-492q35 0 59.5 24.5T564-408q0 35-24.5 59.5T480-324Zm-96-348h192l30-72H354l30 72Zm-35 456h262q55 0 94-39t39-94q0-23-7.5-44T715-432L583-600H377L245-432q-14 18-21.5 39t-7.5 44q0 55 39 94t94 39Z"/></svg> Loans</Link></li>
+                <li><Link to=""><i class="ri-hand-coin-line"></i> Savings</Link></li>
+                <li><Link to="/dashboard/needHelp"><i class="ri-question-line"></i> Need Help?</Link></li>
 
-                <Outlet />
             </ul>
         </div>
         <div className={style.footer}>

@@ -12,6 +12,22 @@
     height: 40px;
 }
 
+.Sidebar .navlinks li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.Sidebar .navlinks li {
+    padding: 5px 30px;
+}
+
+.Sidebar .navlinks li.active {
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+}
+.Sidebar .navlinks li.active a {
+    color: #fff;
+}
+
 .Sidebar .navbrand h3, .Sidebar .footer i {
     background: linear-gradient(90deg, #ff6a00, #ee0979);
     -webkit-background-clip: text;

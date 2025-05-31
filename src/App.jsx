@@ -5,6 +5,7 @@ import Login from './Pages/Login'
 import ForgetPassword from './Pages/ForgetPassword'
 import Dashboard from './Pages/Dashboard/Dashboard'
 import FundTransfer from './Pages/Dashboard/FundTransfer'
+import Overview from './Pages/Dashboard/Overview'
 import { Routes, Route, useLocation } from 'react-router-dom'
 
 
@@ -22,7 +23,9 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/forgetpassword' element={<ForgetPassword />} />
         <Route path='/dashboard' element={<Dashboard />} >
-            <Route path='/fundTransfer' element={<FundTransfer />}></Route>
+            <Route index element={<Overview />}></Route>
+            <Route path='overview' element={<Overview />}></Route>
+            <Route path='fundTransfer' element={<FundTransfer />}></Route>
         </Route>
       </Routes>
       

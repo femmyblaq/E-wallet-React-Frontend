@@ -1,0 +1,75 @@
+.Overview {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+.Overview div {
+    flex: 1;
+    
+}
+.Overview .balance p, .Overview .loan p, .Overview .savings p{
+    margin-top: 15px;
+}
+.Overview .balance a, .Overview .loan a, .Overview .savings a {
+    color: #fff;
+    font-weight: 700;
+
+}
+.Overview .balance, .Overview .loan, .Overview .savings{
+    padding: 15px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+    box-shadow: 3px 3px 5px #ccc;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.Overview .loan {
+    background: #000;
+}
+
+.Overview .savings {
+    background: linear-gradient(90deg, #409e40, #a8f9c0);
+}
+
+.Overview .savings img {
+    width: 32px;
+    height: 32px;
+}
+
+.transferHistory {
+    padding: 30px;
+    
+}
+.transTop {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.transTop a {
+    color: blue;
+}
+.transferHistory .transContent {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f6f5f5;
+    border: 1px solid #eaeaea;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 5px 0;
+}
+.transferHistory .transContent .transDetails {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.transferHistory .transContent .transDetails span {
+    background-color: #ccc;
+    padding: 7px;
+    border-radius: 50%;
+    font-size: 24px;
+}
+.transferHistory .transContent .transDetails p {
+    font-size: 14px;
+}
