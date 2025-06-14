@@ -11,7 +11,10 @@ export default function Dashboard() {
         <Sidebar />
         <main className={style.Main}>
             <Header />
+            <div style={{padding: '20px'}}>
+
                 <Outlet />
+            </div>
             
             {/* <FundTransfer/> */}
         </main>

@@ -1,0 +1,11 @@
+.ft {
+    width: 90%;
+    margin: 20px auto;
+}
+.ft input {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+}

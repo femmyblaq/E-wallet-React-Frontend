@@ -12,7 +12,7 @@
     height: 40px;
 }
 
-.Sidebar .navlinks li a {
+.Sidebar .navlinks a {
     text-decoration: none;
     color: #000;
 }
