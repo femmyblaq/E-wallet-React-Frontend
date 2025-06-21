@@ -1,11 +1,13 @@
 .Overview {
     display: flex;
     gap: 20px;
-    padding: 0 10px 30px;
+    padding: 20px 10px 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-bottom: 20px;
 }
 .Overview div {
     flex: 1;
-    
 }
 .Overview .balance p, .Overview .loan p, .Overview .savings p{
     margin-top: 15px;

@@ -9,7 +9,7 @@ import style from "../Dashboard/Loans.module.css"
 export default function Loans() {
   return (
     <div>
-      <h2>Loans</h2>
+      <h4>Loans</h4>
       <div className={style.card}>
         <h5>Upcoming repayment</h5>
         <div className={style.cardBody}>

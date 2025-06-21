@@ -1,11 +1,107 @@
-.ft {
-    width: 90%;
-    margin: 20px auto;
+.container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
 }
-.ft input {
+
+.container .group {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.group .recent {
+    padding: 0 !important;
+    gap: 0 !important;
+}
+.container .group .recent .top{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px ;
+}
+.container .group .recent .body {
+    padding: 10px;
+    height: 250px;
+    overflow-y: scroll;
+}
+.container .group .recent .body ul {
+    list-style: none;
+}
+.container .group .recent .body ul li {
+    border-bottom: 1px solid #dad7d7;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+.container .group .recent .body ul li h5 {
+    font-weight: 600;
+}
+.container .group .recent .body ul li p {
+    font-size: 0.8rem;
+}
+.container .group .recent a {
+    color: #000;
+    margin-right: 10px;
+    text-decoration: none;
+}
+.container .group .recent a.active {
+    color: #ff6a00;
+}
+.container .group .recent button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: #ff6a00;
+}
+
+.container .group .ft, .group .recent  {
+    width: 500px;
+    height: auto;
+    /* margin: auto; */
+    display: inline-flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 15px;
+    gap: 20px;
+    box-shadow: 5px 5px 2px #e2e0e0;
+    background: linear-gradient(to bottom, #fefefe, #fbf9f9);
+}
+
+.ft input,
+select {
     margin-top: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    outline: none;
+}
 
+.ft input:focus,
+select:focus {
+    border: 1px solid #ff6a00;
+}
+
+.ft button {
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+}
+
+.ft button:disabled {
+    cursor: not-allowed;
+    opacity: 30%;
+}
+
+.container .ads {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 90vh;
+    background: linear-gradient(to bottom, #e5f8c3, #bbd76e);
 }

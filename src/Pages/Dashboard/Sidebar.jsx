@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import style from '../Dashboard/Sidebar.module.css'
 
 export default function Sidebar() {
+  const [collapse, setCollapse] = useState(false);
+  const SidebarCollapse = () => {
+    setCollapse(prev => !prev)
+  }
   return (
-    <div className={style.Sidebar}>
+    <div className={`${style.Sidebar} ${collapse ? `${style.collapse}` : ''}`} >
       <div className={style.navbrand}>
         <h3><i class="ri-wallet-3-fill"></i>Ewallet<span>APP</span></h3>
       </div>
       <div className={style.navlinks}>
-        <ul>
+        <ul className={`${collapse ? `${style.remove}` : ''}`}>
           <NavLink to="/dashboard" end>
             {({isActive}) =><li className={isActive ? style.active: ""}><Link to="/dashboard"><i class="ri-dashboard-2-line"></i> Dashboard</Link></li>}
           </NavLink>
@@ -30,7 +34,7 @@ export default function Sidebar() {
       </div>
       <div className={style.footer}>
         <i class="ri-logout-circle-line"></i>
-        <i class="ri-arrow-left-s-line"></i>
+        <i onClick={SidebarCollapse} class="ri-arrow-left-s-line"></i>
       </div>
     </div>
   )

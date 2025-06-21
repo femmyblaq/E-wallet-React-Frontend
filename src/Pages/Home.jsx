@@ -4,6 +4,7 @@ import Footer from '../Components/Footer'
 import style from "../Pages/Home.module.css"
 import HeroeImg from "../assets/EwalletHeroeImg.png"
 export default function Home() {
+
   return (
     <div>
         <Header />
