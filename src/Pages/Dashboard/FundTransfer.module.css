@@ -23,6 +23,7 @@
     padding: 10px;
     height: 250px;
     overflow-y: scroll;
+    scrollbar-width: none;
 }
 .container .group .recent .body ul {
     list-style: none;
@@ -63,8 +64,9 @@
     padding: 30px;
     border-radius: 15px;
     gap: 20px;
-    box-shadow: 5px 5px 2px #e2e0e0;
-    background: linear-gradient(to bottom, #fefefe, #fbf9f9);
+    box-shadow: 2px 2px 2px #e2e0e0;
+    background-color: #fff;
+    /* background: linear-gradient(to bottom, #fefefe, #fbf9f9); */
 }
 
 .ft input,
@@ -104,4 +106,26 @@ select:focus {
     padding: 20px;
     height: 90vh;
     background: linear-gradient(to bottom, #e5f8c3, #bbd76e);
+}
+
+
+@media (min-width: 320px) and (max-width: 440px) {
+    .container {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+    .container .ads {
+        height: 150px;
+    }
+    .container .group {
+        padding: 0 !important;
+        gap: 10px;
+    }
+    .container .group form {
+        width: 100% !important;
+    }
+    .container .group .recent {
+        width: 100% !important;
+        margin-bottom: 60px;
+    }
 }

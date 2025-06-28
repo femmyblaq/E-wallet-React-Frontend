@@ -104,3 +104,20 @@ background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75
     width: 100%;
     text-align: center;
 }
+
+@media (min-width: 320px) and (max-width: 440px) {
+    .Footer {
+        height: 100%;
+    }
+    .Footer .container {
+    /* display: grid; */
+    grid-template-columns: 1fr;
+    width: 95%;
+    padding-top: 50px;
+    gap: 20px;
+}
+.Footer .container .usefulLinks, .Footer .container .contact  {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+}

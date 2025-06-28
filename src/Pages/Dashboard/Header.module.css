@@ -38,3 +38,8 @@
     text-decoration: none;
     color: #000;
 }
+
+@media (min-width: 320px) and (max-width: 440px) {
+    .Header{
+        height: 50px;}
+}

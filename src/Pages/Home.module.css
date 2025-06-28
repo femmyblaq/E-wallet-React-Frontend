@@ -40,3 +40,18 @@
 .Heroe img {
     width: 500px;
 }
+
+@media (min-width: 320px) and (max-width: 440px) {
+    .Heroe {
+        flex-direction: column;
+        height: 100vh;
+    }
+    .Heroe .heroeContent {
+    width: 90%;
+}
+.Heroe .heroeContent h2{
+    font-size: 2rem; }
+    .Heroe img {
+    width: 300px;
+}
+}

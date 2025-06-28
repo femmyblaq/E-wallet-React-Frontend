@@ -55,3 +55,9 @@
  ul.remove {
     display: none !important;
 }
+
+@media (min-width: 320px) and (max-width: 440px) {
+    .Sidebar {
+        display: none;
+    }
+}
