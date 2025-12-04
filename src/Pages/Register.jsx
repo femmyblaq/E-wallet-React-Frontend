@@ -4,32 +4,51 @@ import style from "../Pages/Register.module.css"
 import { useState } from 'react'
 
 export default function Register() {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [error, setError] = useState(false)
+    const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
+  });
 
-    const submitHandler = (e) => {
-            e.preventDefault();
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
-            //setErrForPass();
-            
-        
-            setFirstName("")
-            setLastName("")
-            setEmail("")
-            setPassword("")
-            setConfirmPassword("")
+  // handle input changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-            
-            console.log(firstName)
-            console.log(lastName)
-            console.log(email)
-            console.log(password)
-            console.log(confirmPassword)
+  // handle form submission
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("http://localhost:3000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage("✅ Registration successful! You can now log in.");
+        console.log("User registered:", data);
+      } else {
+        setMessage(`❌ Error: ${data.message || "Something went wrong."}`);
+      }
+    } catch (error) {
+      setMessage("⚠️ Network error. Please try again.");
+    } finally {
+      setLoading(false);
     }
+  };
     
     const setErrForPass = () => {
         if(password !== confirmPassword) {
@@ -45,47 +64,52 @@ export default function Register() {
                 <img src={registerImg} alt="" />
                 <div className={style.formDiv}>
                 <h2>Register</h2>
-                {error && <p style={{color: "#f00"}}>Password does not match</p> }
-                <form onSubmit={submitHandler} className={error ? style.error : ""}>
+                {/* {error && <p style={{color: "#f00"}}>Password does not match</p> } */}
+                <form onSubmit={submitHandler} >
                     <div className={style.formGroup}>
                         <input 
-                            type="text" 
+                            type="text"
+                            name='firstName' 
                             placeholder='First name'
-                            value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)} />
+                            value={formData.firstName}
+                            onChange={handleChange} />
                             
                     </div>
                     <div className={style.formGroup}>
                         <input 
-                            type="text" 
+                            type="text"
+                            name='lastName' 
                             placeholder='Last name'
-                            value={lastName}
-                            onChange={(e) => setLastName(e.target.value)} />
+                            value={formData.lastName}
+                            onChange={handleChange} />
                     </div>
                     <div className={style.formGroup}>
                         <input 
                             type="email" 
+                            name='email' 
                             placeholder='Email'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)} />
+                            value={formData.email}
+                            onChange={handleChange} />
                     </div>
                     <div className={style.formGroup}>
                         <input 
                             type="password" 
+                            name='password'
                             placeholder='Password'
-                            className={error ? style.error : ""}
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)} />
+                            // className={error ? style.error : ""}
+                            value={formData.password}
+                            onChange={handleChange} />
                     </div>
                     <div className={style.formGroup}>
                         <input 
                             type="password" 
+                            name='confirmPassword'
                             placeholder='confirmPassword'
-                            className={error ? style.error : ""}
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)} />
+                            // className={error ? style.error : ""}
+                            value={formData.confirmPassword}
+                            onChange={handleChange} />
                     </div>
-                    <button>Submit</button>
+                    <button>{loading ? "Submiting.." : "Submit"}</button>
 
                     <p>Already have an account? <Link to="/login">Login</Link></p>
                 </form>
